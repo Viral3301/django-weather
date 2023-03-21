@@ -14,8 +14,31 @@
         <div class="content">
             <input class="input" type="text" placeholder="City name">
             <div class="weather-widget">
-                <div class="weather-widget-header"></div>
-                <div class="weather-widget-body"></div>
+                <div class="weather-widget-header">
+                    <p class="city-name">{{ weather.city }}</p>
+                    <p class="temperature">{{weather.temperature}}</p>
+                    <p class="feels_like">Ощущается как : {{ weather.feels_like }}</p>
+                    <p class="descriptiom">{{ weather.description|capfirst}}</p>
+                    
+
+                </div>
+                <div class="weather-widget-body">
+                    <div class="now">
+                        <p class="body-content-title">Сейчас</p>
+                        <img src="https://openweathermap.org/img/w/{{weather.icon}}.png" alt="">
+                        <p class="body-content-temperature">{{weather.temperature}}</p>
+                    </div>
+                    <div class="tomorrow">
+                        <p class="body-content-title">Завтра</p>
+                        <img src="https://openweathermap.org/img/w/{{weather.icon}}.png" alt="">
+                        <p class="body-content-temperature">{{weather.temperature}}</p>
+                    </div>
+                    <div class="day-after-tommorow">
+                        <p class="body-content-title">Послезавтра</p>
+                        <img src="https://openweathermap.org/img/w/{{weather.icon}}.png" alt="">
+                        <p class="body-content-temperature">{{weather.temperature}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
