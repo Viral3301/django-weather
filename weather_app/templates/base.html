@@ -12,7 +12,11 @@
 <body>
     <div class="container">
         <div class="content">
-            <input class="input" type="text" placeholder="City name">
+            <form  method="POST">{% csrf_token %}
+
+                <input type="text" placeholder="City name" name='city'>
+                <button class="submit-btn" type="submit" >Enter</button>
+            </form>
             <div class="weather-widget">
                 <div class="weather-widget-header">
                     <p class="city-name">{{ weather.city }}</p>
@@ -30,13 +34,13 @@
                     </div>
                     <div class="tomorrow">
                         <p class="body-content-title">Завтра</p>
-                        <img src="https://openweathermap.org/img/w/{{weather.icon}}.png" alt="">
-                        <p class="body-content-temperature">{{weather.temperature}}</p>
+                        <img src="https://openweathermap.org/img/w/{{weather.tomorrow_icon}}.png" alt="">
+                        <p class="body-content-temperature">{{weather.tomorrow_temperature}}</p>
                     </div>
                     <div class="day-after-tommorow">
                         <p class="body-content-title">Послезавтра</p>
-                        <img src="https://openweathermap.org/img/w/{{weather.icon}}.png" alt="">
-                        <p class="body-content-temperature">{{weather.temperature}}</p>
+                        <img src="https://openweathermap.org/img/w/{{weather.day_after_tomorrow_icon}}.png" alt="">
+                        <p class="body-content-temperature">{{weather.day_after_tomorrow_temperature}}</p>
                     </div>
                 </div>
             </div>
