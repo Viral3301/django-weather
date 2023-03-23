@@ -1,2 +1,2 @@
 # django-weather
-django weather app
+django openweathermapAPI weather app
